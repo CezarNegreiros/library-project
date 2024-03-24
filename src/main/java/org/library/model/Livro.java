@@ -8,17 +8,14 @@ public class Livro {
     private String nome;
     private String lingua;
     private Date ano;
-    private String isbn;
 
     public Livro() {
     }
 
-    public Livro(int id_livro, String nome, String lingua, Date ano, String isbn) {
-        this.id_livro = id_livro;
+    public Livro(String nome, String lingua, Date ano) {
         this.nome = nome;
         this.lingua = lingua;
         this.ano = ano;
-        this.isbn = isbn;
     }
 
     public int getId_livro() {
@@ -53,11 +50,4 @@ public class Livro {
         this.ano = ano;
     }
 
-    public String getIsbn() {
-        return isbn;
-    }
-
-    public void setIsbn(String isbn) {
-        this.isbn = isbn;
-    }
 }

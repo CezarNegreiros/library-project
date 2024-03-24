@@ -9,16 +9,20 @@ public class Edicao{
     private Date ano;
     private int numero_paginas;
     private int id_estoque;
+    private int id_editora;
+    private int id_livro;
 
     public Edicao() {
     }
 
-    public Edicao(String isbn, float preco, Date ano, int numero_paginas, int id_estoque) {
+    public Edicao(String isbn, float preco, Date ano, int numero_paginas, int id_estoque, int id_editora, int id_livro) {
         this.isbn = isbn;
         this.preco = preco;
         this.ano = ano;
         this.numero_paginas = numero_paginas;
         this.id_estoque = id_estoque;
+        this.id_editora = id_editora;
+        this.id_livro = id_livro;
     }
 
     public String getIsbn() {
@@ -59,5 +63,21 @@ public class Edicao{
 
     public void setId_estoque(int id_estoque) {
         this.id_estoque = id_estoque;
+    }
+
+    public int getId_editora() {
+        return id_editora;
+    }
+
+    public void setId_editora(int id_editora) {
+        this.id_editora = id_editora;
+    }
+
+    public int getId_livro() {
+        return id_livro;
+    }
+
+    public void setId_livro(int id_livro) {
+        this.id_livro = id_livro;
     }
 }

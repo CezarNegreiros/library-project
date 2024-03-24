@@ -6,17 +6,15 @@ public class Editora {
     private String nome;
     private String endereco;
     private String telefone;
-    private String isbn;
 
     public Editora() {
     }
 
-    public Editora(int id_editora, String nome, String endereco, String telefone, String isbn) {
+    public Editora(int id_editora, String nome, String endereco, String telefone) {
         this.id_editora = id_editora;
         this.nome = nome;
         this.endereco = endereco;
         this.telefone = telefone;
-        this.isbn = isbn;
     }
 
     public int getId_editora() {
@@ -49,13 +47,5 @@ public class Editora {
 
     public void setTelefone(String telefone) {
         this.telefone = telefone;
-    }
-
-    public String getIsbn() {
-        return isbn;
-    }
-
-    public void setIsbn(String isbn) {
-        this.isbn = isbn;
     }
 }
