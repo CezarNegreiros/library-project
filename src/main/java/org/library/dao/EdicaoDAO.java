@@ -17,18 +17,16 @@ public class EdicaoDAO {
 
             stmt.setString(1, edicao.getIsbn());
             stmt.setFloat(2, edicao.getPreco());
-            stmt.setInt(3, edicao.getAno().getYear());
+            stmt.setInt(3, edicao.getAno().getYear() + 1900);
             stmt.setInt(4, edicao.getNumero_paginas());
             stmt.setInt(5, edicao.getId_estoque());
             stmt.setInt(6, edicao.getId_editora());
             stmt.setInt(7, edicao.getId_livro());
 
             stmt.execute();
-            stmt.close();
         }catch(Exception e){
             System.out.println("O erro é em EdicaoDAO");
             System.out.println(e);
-            //throw new RuntimeException();
         }
     }
 }

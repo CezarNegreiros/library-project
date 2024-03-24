@@ -18,13 +18,11 @@ public class LivroDAO {
             stmt.setInt(1, livro.getId_livro());
             stmt.setString(2, livro.getNome());
             stmt.setString(3, livro.getLingua());
-            stmt.setInt(4, livro.getAno().getYear());
+            stmt.setInt(4, livro.getAno().getYear() + 1900);
 
             stmt.execute();
-            stmt.close();
         }catch(Exception e){
             System.out.println(e);
-            //throw new RuntimeException();
         }
     }
 }

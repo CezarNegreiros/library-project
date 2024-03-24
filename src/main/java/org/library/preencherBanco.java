@@ -12,7 +12,6 @@ import java.util.Random;
 public class preencherBanco {
     public static void main(String[] args) {
 
-        //Calendar calendar = Calendar.getInstance();
         Faker faker = new Faker();
         Random rand = new Random();
         EditoraDAO editoraDAO = new EditoraDAO();
@@ -25,9 +24,12 @@ public class preencherBanco {
         Edicao edicao = new Edicao();
         LivroDAO livroDAO = new LivroDAO();
         Livro livro = new Livro();
+        PossuiDAO possuiDAO = new PossuiDAO();
+        Possui possui = new Possui();
         int idEditora = 0;
         int idLivro = 0;
         int idEstoque = 0;
+        int idAutor = 0;
 
         for( int i = 0; i < 100; i ++){
 
@@ -41,6 +43,7 @@ public class preencherBanco {
                 idEditora++;
             }
 
+            autor.setId_autor(idAutor);
             autor.setNome(faker.name().fullName());
             autor.setData_nascimento(new Date(faker.date().birthday().getTime()));
             autor.setPais_nascimento(faker.country().name());
@@ -56,7 +59,12 @@ public class preencherBanco {
                 livro.setLingua(faker.nation().language());
                 livro.setAno(new Date(faker.date().birthday().getTime()));
                 livroDAO.addLivro(livro);
+                possui.setId_autor(autor.getId_autor());
+                possui.setId_livro(livro.getId_livro());
+                possuiDAO.addPossui(possui);
+
                 idLivro++;
+                idAutor++;
 
             int qtdEdicoes = rand.nextInt(10, 12);
 
